@@ -11,7 +11,7 @@ const https = require('https');
 
 // gunakan url dari stock data
 
-const url = 'https://api.stockdata.org/v1/data/eod?symbols=INDF.JK&api_token=BfaSyyLCiQbK27eZbaPWxEX5wX1yTtZXI0I4Ydlm';
+const url = 'https://api.stockdata.org/v1/data/eod?symbols=INDF.JK&api_token=xxx';
 
 const request = https.request(url, (response) => {
 
