@@ -42,5 +42,43 @@ request.end()
 ```
 
 
+source code simpan data dari stockdata.org ke file .json:
+
+
+
+```nodejs
+
+const fs = require('fs');
+
+const https = require('https');
+
+
+const url = 'https://api.stockdata.org/v1/data/eod?symbols=INDF.JK&api_token=xxx';
+
+const request = https.request(url, (response) => {
+
+    let data = '';
+
+    response.on('data', (chunk) => {
+
+        data = data + chunk.toString();
+    });
+
+
+    response.on('end',() =>{
+
+        const body = JSON.stringify(data);
+
+        fs.writeFileSync('saham1.json',data)
+    });
+});
+
+
+request.end();
+
+
+```
+
+
 
 
